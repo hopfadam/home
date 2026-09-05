@@ -1,14 +1,96 @@
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  height: 100dvh;
+  overflow: hidden; /* no scrollbar, ever */
+}
+
+body.main-background {
+  background-image: url('./Assets/Images/background.JPG');
+  background-color: #000;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.desktop-icons {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-content: flex-start;
+  height: calc(100dvh - 10% - 4dvh);
+  padding: clamp(1dvh, 1.5vmin, 3dvh);
+  gap: clamp(0.5dvh, 2.5vmin, 3dvh);
+
+  overflow-x: auto;
+  overflow-y: hidden;
+}
+
+.icon {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: clamp(70px, 9vmin, 130px);
+  height: clamp(70px, 9vmin, 130px);
+  text-decoration: none;
+  color: #fff;
+  text-align: center;
+  padding: clamp(0.3dvh, 0.8vmin, 1dvh);
+}
+
+.icon img {
+  width: clamp(40px, 8vmin, 80px);
+  height: clamp(40px, 8vmin, 80px);
+  object-fit: contain;
+}
+
+.icon span {
+  margin-top: 4px;
+  font-size: clamp(10px, 2vmin, 16px);
+  text-shadow: 1px 1px 2px black;
+}
+
 .main-footer {
-    position: fixed;
-      left: 0;
-      bottom: 0;
-      width: 100%;
-      height: 10%;
-      background-color: #333;
-      color: #fff;
-      display: flex;
-      align-items: center;
-      justify-content: flex-start; /* or center / space-between */
-      gap: 20px;
-      z-index: 1000;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 10%;
+  background-color: #333;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  padding: clamp(0.5dvh, 1.5vmin, 1.5dvh) clamp(1dvh, 2vmin, 2dvh);
+  gap: clamp(1dvh, 2vmin, 2dvh);
+  box-sizing: border-box;
+  z-index: 1000;
+}
+
+.taskbar-icons {
+  display: flex;
+  align-items: center;
+  gap: clamp(0.8dvh, 1.5vmin, 2dvh);
+  height: 100%;
+  flex: 1;              /* takes up remaining space, pushes copyright right */
+  min-width: 0;         /* required so flex-item can shrink and actually scroll */
+  overflow-x: auto;
+  overflow-y: hidden;
+}
+
+.taskbar-icons img {
+  height: clamp(32px, 6vmin, 80px);
+  width: auto;
+  object-fit: contain;
+  flex-shrink: 0;       /* keeps icons from being squashed as they scroll */
+}
+
+.copyright {
+  flex-shrink: 0;       /* never shrinks or scrolls out */
+  font-size: clamp(11px, 1.6vmin, 14px);
+  color: #fff;
+  padding-left: clamp(1dvh, 2vmin, 2dvh);
+  border-left: 1px solid rgba(255, 255, 255, 0.2); /* subtle divider, optional */
 }
