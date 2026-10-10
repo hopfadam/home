@@ -1,0 +1,58 @@
+*{
+    box-sizing: border-box;
+}
+
+.main-footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 8%;
+  background-color: #333;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  padding: 0 clamp(1dvh, 2vmin, 2dvh);
+  gap: clamp(1dvh, 2vmin, 2dvh);
+  box-sizing: border-box;
+  z-index: 1000;
+}
+
+.taskbar-group {
+  display: flex;
+  align-items: center;
+  gap: clamp(0.8dvh, 3vmin, 3dvh);
+  height: 100%;
+  flex: 1;              /* takes up remaining space, pushes copyright right */
+  min-width: 0;         /* required so flex-item can shrink and actually scroll */
+  overflow-x: auto;
+  overflow-y: hidden;
+}
+
+.taskbar-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 90%;
+  padding: 0.5dvh 0.8vmin;
+  flex-shrink: 0;
+}
+
+.taskbar-icon img {
+  height: clamp(32px, 6vmin, 80px);
+  width: auto;
+  object-fit: contain;
+  flex-shrink: 0;       /* keeps icons from being squashed as they scroll */
+}
+
+.taskbar-icon:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+.copyright {
+  flex-shrink: 0;       /* never shrinks or scrolls out */
+  font-size: clamp(11px, 1.6vmin, 14px);
+  color: #fff;
+  padding-left: clamp(1dvh, 2vmin, 2dvh);
+  border-left: 1px solid rgba(255, 255, 255, 0.2); /* subtle divider, optional */
+}
