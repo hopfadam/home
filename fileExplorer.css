@@ -1,0 +1,37 @@
+.window-border{
+    padding: 2rem 0.5rem 0.5rem;
+    background: rgba(135, 206, 250, 0.28);
+    border: 1px solid rgb(66, 66, 66);
+    backdrop-filter: blur(18px) saturate(140%) hue-rotate(10deg);
+    -webkit-backdrop-filter: blur(18px) saturate(140%) hue-rotate(10deg);
+    height: 90%;
+    width: 90%;
+    border-radius: 5px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+}
+
+.window-border button{
+    position: absolute;
+    height: 1.5rem;
+    width: 3.5rem;
+    top: 0rem;
+    right: 0.5rem;
+    background: red;
+    border: 1px solid rgb(66, 66, 66);  
+    border-radius: 0 0 5px 5px;  
+    color: white;
+    font-size: 1.2rem;
+    cursor: pointer;
+}
+
+.window-border button:hover {
+    filter: brightness(10);
+}
+
+.window{
+    background: white;
+    height: 100%;
+    width: 100%;
+    padding: 0.5rem;
+}
