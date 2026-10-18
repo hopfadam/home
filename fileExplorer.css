@@ -1,14 +1,20 @@
 .window-border{
+    box-sizing: border-box;
     padding: 2rem 0.5rem 0.5rem;
     background: rgba(135, 206, 250, 0.28);
     border: 1px solid rgb(66, 66, 66);
     backdrop-filter: blur(18px) saturate(140%) hue-rotate(10deg);
     -webkit-backdrop-filter: blur(18px) saturate(140%) hue-rotate(10deg);
-    height: 90%;
-    width: 90%;
+    width: min(90%, 1200px);
+    height: calc(100dvh - 8% - 3rem);
+    min-height: 0;
+    margin: 2rem auto 1rem;
     border-radius: 5px;
     overflow: hidden;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+    display: flex;
+    flex-direction: column;
+    position: relative;
 }
 
 .window-border button{
@@ -30,8 +36,25 @@
 }
 
 .window{
+    display: flex;
+    flex-wrap: wrap;
+    align-content: flex-start;
+    gap: clamp(0.5dvh, 8vmin, 10dvh);
     background: white;
-    height: 100%;
     width: 100%;
-    padding: 0.5rem;
+    padding: 1rem;
+    flex: 1;
+    min-height: 0;
+    overflow-x: auto;
+}
+
+@media (max-width: 600px) {
+    .window-border {
+        width: 100%;
+        height: calc(100dvh - 8%);
+        margin: 0;
+        border-radius: 0;
+        padding-left: 0.5rem;
+        padding-right: 0.5rem;
+    }
 }
