@@ -29,7 +29,7 @@ body {
 }
 
 .about-content {
-  width: min(60%, 930px);
+  width: min(80%, 930px);
   min-height: 100dvh;
   padding: 1rem clamp(1.5rem, 5vw, 4rem) clamp(1.5rem, 5vw, 4rem);
   background-color: #fff;
